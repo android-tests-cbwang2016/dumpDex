@@ -22,19 +22,11 @@ android {
             abiFilters "armeabi-v7a","arm64-v8a"
         }
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
     buildTypes {
-        debug {
-            versionNameSuffix "-debug"
-            if (signingConfigs.releaseConfig != null) {
-                signingConfig signingConfigs.releaseConfig
-            }
-        }
-        release {
-            minifyEnabled false
-            if (signingConfigs.releaseConfig != null) {
-                signingConfig signingConfigs.releaseConfig
-            }
-        }
     }
 
     externalNativeBuild {
